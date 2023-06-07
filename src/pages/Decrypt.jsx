@@ -2,6 +2,7 @@ import AES from "crypto-js/aes";
 import CryptoJS from "crypto-js";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 import {
   Button,
   Dialog,
@@ -121,6 +122,7 @@ const DecryptApp = () => {
                   className="bg-gray-900"
                   open={open}
                   handler={handleOpen}
+                  size={isMobile ? "xl" : "sm"}
                   animate={{
                     mount: { scale: 1, y: 0 },
                     unmount: { scale: 0.9, y: -100 },
